@@ -1,0 +1,27 @@
+---
+sidebar_position: 5
+title: Upload Data
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Upload Data Function
+
+`IPFS Upload Data` Uploads data to the *IPFS* network. This function requires inputs as follows:
+
+* Ipfs Pinning Service <Step text="1"/> : Struct, holds the url and name of the pinning service to send the request to.
+* Bearer Token <Step text="2"/> : The API token for authentication.
+* Data To Upload <Step text="3"/> : The data to upload(as an array of bytes).
+* Save As <Step text="4"/> : Mandatory filename for the uploaded data on IPFS.
+
+![IPFS Upload Data](_static/img/05_upload-data.png)
+
+The returned *Response* is a struct that holds data such as headers, status code, and body of the response of the HTTP
+request.
+
+:::info
+If *Success* is *True* that only means the upload to the *IPFS* network was successful.
+:::
+
+If successful, returns the *CID* <Step text="5"/> of the uploaded data in *String* format.
+
