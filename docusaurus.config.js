@@ -8,7 +8,7 @@ const url3StudioWebsite = "https://3studio.online";
 const urlUnrealMarketplaceProduct_TSIF = "https://www.unrealengine.com/marketplace/en-US/product/b8a5ef2c915c4359b7e66d08a85d4c74";
 const urlUnrealMarketplaceProduct_TSBC = "https://www.unrealengine.com/marketplace/en-US/product/fc42c8121e0d445f8887ed6962af796e";
 const urlDiscordInviteLink = "http://discord.3studio.online";
-const urlGitHubRepository = "https://github.com/3StudioOnline/TSFC-Documentation";
+const urlGitHubRepository = "https://github.com/3StudioOnline/TSIF-Documentation";
 const urlGitHubIssueTracker = `${urlGitHubRepository}/issues`;
 
 const globalRemarkPlugins = [
