@@ -4,7 +4,7 @@
 📽 [Tutorial Videos](https://www.youtube.com/user/Venomek1985) <br/>
 📖 [Documentation](https://3studioonline.github.io/TSIF-Documentation)
 📆 [Roadmap](https://3studioonline.github.io/TSIF-Documentation/roadmap) <br/>
-🛰 [Discord](https://discord.gg/3studio) <br/>
+🛰 [Discord](http://discord.3studio.online) <br/>
 
 ## IPFS Plugin
 `IPFS` Plugin is built for *Unreal Engine* to allow game developers make use of the *IPFS* technology.

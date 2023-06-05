@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TSFC-Documentation.iml" filepath="$PROJECT_DIR$/.idea/TSFC-Documentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TSIF-Documentation.iml" filepath="$PROJECT_DIR$/.idea/TSIF-Documentation.iml" />
     </modules>
   </component>
 </project>
