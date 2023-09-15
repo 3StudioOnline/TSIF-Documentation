@@ -1,7 +1,7 @@
 # IPFS Plugin
 
 🔌 [Demo Unreal Project](https://dev.azure.com/3StudioOnline/Public%20Resources/_git/IPFS) (PLUGIN REQUIRED) <br/>
-📽 [Tutorial Videos](https://www.youtube.com/user/Venomek1985) <br/>
+📽 [Tutorial Videos](https://www.youtube.com/channel/UCWZokltV5kbpOgkDZG1YQmg) <br/>
 📖 [Documentation](https://3studioonline.github.io/TSIF-Documentation)
 📆 [Roadmap](https://3studioonline.github.io/TSIF-Documentation/roadmap) <br/>
 🛰 [Discord](http://discord.3studio.online) <br/>
