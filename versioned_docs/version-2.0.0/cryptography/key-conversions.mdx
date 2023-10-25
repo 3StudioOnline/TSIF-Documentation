@@ -1,0 +1,54 @@
+---
+sidebar_position: 5
+title: Key Conversions
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+Various cryptographic key conversions are available as functions.
+Separate functions convert *public* and *private* keys between different encodings.
+Available encodings are:
+
+* `PEM`
+* `DER`
+* `EC`
+
+:::warning
+Elliptic Curve encoding only works with Elliptic Curve keys, using another key type will fail.
+:::
+
+## Examples
+### Convert Public Key
+
+`Convert Public Key` converts a public key from one encoding into another. This function requires inputs as follows:
+
+* `Public Key` <Step text="1"/> : Byte array, public key bytes encoded in the source encoding.
+
+![Convert Public Key](_static/img/convert_key_pub_pem_der.png)
+
+If successful, returns byte array containing the *public key* <Step text="3"/> in target encoding.
+
+:::note
+For Elliptic Curve type keys there's an additional input or output (depending on the conversion direction)
+containing the *Elliptic Curve Key Type*.
+:::
+
+### Convert Private Key
+
+`Convert Private Key` converts a private key from one encoding into another. This function requires inputs as follows:
+
+* `Private Key` <Step text="1"/> : Byte array, private key bytes encoded in the source encoding.
+
+There is also an additional optional input:
+
+* `Password` <Step text="2"/> : String, pass-phrase used to decrypt the private key
+(Leave empty if key is not encrypted).
+
+![Convert Private Key](_static/img/convert_key_pem_der.png)
+
+If successful, returns byte array containing the *private key* <Step text="3"/> in target encoding.
+
+:::note
+For Elliptic Curve type keys there's an additional input or output (depending on the conversion direction)
+containing the *Elliptic Curve Key Type*.
+:::
