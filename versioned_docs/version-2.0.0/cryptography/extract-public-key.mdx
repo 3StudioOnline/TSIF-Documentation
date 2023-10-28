@@ -8,7 +8,8 @@ import {Step} from '@site/src/lib/utils.mdx'
 `Extract Public Key` Retrieves the public key associated with a given private key. This function requires inputs as follows:
 
 * `Private Key (PEM)` <Step text="1"/> : Byte array, private key bytes encoded as `PEM`.
-* `Password` <Step text="2"/> : String, pass-phrase used to decrypt the private key (Leave empty if key is not encrypted).
+* `Password` <Step text="2"/> : UTF-8 String, pass-phrase used to decrypt the private key
+(should stay empty if the key is not encrypted).
 
 ![Extract Public Key](_static/img/extract_public_key.png)
 

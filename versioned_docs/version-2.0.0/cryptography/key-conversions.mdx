@@ -22,7 +22,7 @@ Elliptic Curve encoding only works with Elliptic Curve keys, using another key t
 
 `Convert Public Key` converts a public key from one encoding into another. This function requires inputs as follows:
 
-* `Public Key` <Step text="1"/> : Byte array, public key bytes encoded in the source encoding.
+* `Public Key` <Step text="1"/> : Byte array, public key encoded in the same encoding algorithm as the source.
 
 ![Convert Public Key](_static/img/convert_key_pub_pem_der.png)
 
@@ -37,7 +37,7 @@ containing the *Elliptic Curve Key Type*.
 
 `Convert Private Key` converts a private key from one encoding into another. This function requires inputs as follows:
 
-* `Private Key` <Step text="1"/> : Byte array, private key bytes encoded in the source encoding.
+* `Private Key` <Step text="1"/> : Byte array, private key encoded in the same encoding algorithm as the source.
 
 There is also an additional optional input:
 
