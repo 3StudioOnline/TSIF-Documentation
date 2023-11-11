@@ -19,11 +19,6 @@ It can be left empty, but total number of bytes will not be known.
 if it is missing.
 * Overwrite Existing File <Step text="6"/> : If set to false and the file exists this function will abort with failure.
 Otherwise, an existing file will be overwritten.
-* Request Handle <Step text="7"/> : Handle to a HTTP request, allows for cancellation of an ongoing request.
-* Bytes Received <Step text="8"/> : Number of bytes received while the request is still ongoing.
-* Bytes Total <Step text="9"/> : Total bytes expected to receive.
-* Response <Step text="10"/> : Struct, holds data such as headers, status code, and body of the response of the HTTP
-request.
 
 ![IPFS Download File](_static/img/04_download-file.png)
 
@@ -32,3 +27,9 @@ If *Success* is *True* that means that the response from the *IPFS* network was 
 the specified path was also successful.
 :::
 
+If successful returns outputs as follows:
+* Request Handle <Step text="7"/> : Handle to a HTTP request, allows for cancellation of an ongoing request.
+* Bytes Received <Step text="8"/> : Number of bytes received while the request is still ongoing.
+* Bytes Total <Step text="9"/> : Total bytes expected to receive.
+* Response <Step text="10"/> : Struct, holds data such as headers, status code, and body of the response of the HTTP
+request.
