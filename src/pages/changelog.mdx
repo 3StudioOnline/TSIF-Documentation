@@ -2,6 +2,42 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 2.0.0 - [2023-11-xx]
+- Added
+    - Cryptography support
+        - Key generation
+        - Signing and Verifying signatures
+        - Digest functions
+    - Support for IPLD
+    - Support for IPNS
+        - Creating and Signing records
+        - Uploading and Downloading records
+        - IPNS functions, that behave the same as IPFS functions do
+        - IPNS Publish function for easy record creation and publishing in one function
+    - CAR file support
+        - CAR Packing and Unpacking
+        - CAR Upload And Download
+    - PAK file loading & mounting support at runtime
+    - IPFS Chunker
+        - Managing game .Pak files for dynamic access from IPFS
+        - Bluetility widget streamlining the chunker workflow, making it accessible and easy to use
+            - Profile management
+            - Key management
+            - IPNS Manifest creation and management
+- Removed
+  - Support for Unreal Engine 5.0
+
+### 1.1.0
+- Added
+    - HTTP request management subsystem
+    - IPFS Status function
+- Changed
+    - All IPFS functions now use the new subsystem
+- Fixed
+    - Various small bugs and nullptr errors
+- Removed
+    - Support for Unreal Engine 4.27
+
 ### 1.0.2 - [2023-09-14]
 - Added
     - Support for Unreal Engine 5.3
