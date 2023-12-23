@@ -1,0 +1,30 @@
+---
+sidebar_position: 6
+title: Upload File
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Upload File Function
+
+`IPFS Upload File` Uploads a local file to the *IPFS* network. This function requires inputs as follows:
+
+* Ipfs Pinning Service <Step text="1"/> : Struct, holds the url and name of the pinning service to send the request to.
+* Bearer Token <Step text="2"/> : The API token for authentication.
+* File To Upload <Step text="3"/> : The path of the file to upload.
+* Save As <Step text="4"/> : Optional alternate filename for the uploaded file on IPFS.
+If left empty, the original filename will be used.
+
+![IPFS Upload File](_static/img/06_upload-file.png)
+
+:::info
+If *Success* is *True* that only means the upload to the *IPFS* network was successful.
+:::
+
+If successful returns outputs as follows:
+* Request Handle <Step text="5"/> : Handle to a HTTP request, allows for cancellation of an ongoing request.
+* Bytes Sent <Step text="6"/> : Number of bytes sent while the request is still ongoing.
+* Bytes Total <Step text="7"/> : Total bytes expected to receive.
+* Response <Step text="8"/> : Struct, holds data such as headers, status code, and body of the response of the HTTP
+request.
+* CID <Step text="9"/> : The *CID* of the uploaded data.

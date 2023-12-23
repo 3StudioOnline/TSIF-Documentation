@@ -1,0 +1,43 @@
+---
+sidebar_position: 1
+title: Overview
+---
+
+## What is IPNS
+IPNS, [the InterPlanetary Name System](https://docs.ipfs.tech/concepts/ipns/), is one of the IPFS subcomponents. It is a
+naming system created to refer to the immutable IPFS CIDs in a mutable, updatable way. Every IPNS name is associated
+with a value, usually an IPFS CID, and resolving that value allows access to the content linked to by the IPNS name.
+
+All that means, that IPNS allows developers to create dynamically-linked content, when using statically-addressed
+systems like IPFS.
+
+## What is a name
+IPNS names are CIDs. They follow the same rules as other CIDs, but the hash used to generate them is not the hash
+of the contents pointed to by the name. Instead, it is the public key associated with the name, hashed and converted
+into a CID. IPNS names are generally encoded in base36 to distinguish them from the base32-encoded IPFS CIDs.
+
+## Example
+Somewhat simple use-case for **IPNS names** is as follows:
+1. Create a new resource.
+2. Upload the resource to IPFS and save the CID.
+3. Acquire a private key.
+4. Publish an **IPNS name** using the key and the resource CID.
+5. Modify the resource.
+6. Upload the modified resource to IPFS, save the new CID.
+7. Republish the name using the same key, and the new resource CID.
+
+In this process two CIDs for the initial resource and the modified resource were created. Projects accessing that resource
+through IPFS would need to update their project and modify the CID. That is not the case when using an **IPNS name**,
+because only one name was created in this situation. This allows projects relying on content from IPFS network to access
+required data no matter how many times the content itself (and with it, the CID) is changed or updated.
+
+**IPNS names** behave much like well-known web links. The content they point to might change, but all a web
+browser needs to know to access them is the link itself.
+
+:::note
+IPNS is not the only way of accessing IPFS contents without updating the CID. **DNSLink** or a dedicated server can
+accomplish fetching resources as well. However, with IPNS, everyone can do it. The process of creation and access to
+resources is not bottle-necked by any issues with the provider chosen for this task. The system is decentralized,
+and any provider implementing IPNS protocols can fetch and supply the required resource. The use of cryptography and
+identifying everything through hashes and keys ensures the security of data being accessed this way.
+:::
