@@ -1,0 +1,35 @@
+---
+sidebar_position: 4
+title: Download File
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Download File Function
+
+`IPFS Download File` Downloads a file from the *IPFS* network for the specified CID/Path. This function requires
+inputs as follows:
+
+* Ipfs Pinning Service <Step text="1"/> : Struct, holds the url and name of the pinning service the data was pinned to.
+It can be left empty, but total number of bytes will not be known.
+* Ipfs Http Gateway <Step text="2"/> : Struct, holds the url of the gateway to send the request to.
+* Ipfs Address <Step text="3"/> : Struct, holds the CID and path of the file on *IPFS* network.
+* Write To File path <Step text="4"/> : The filepath where the downloaded data is written to.
+* Create Path If Missing <Step text="5"/> : Creates the filepath to where the downloaded data should be written to
+if it is missing.
+* Overwrite Existing File <Step text="6"/> : If set to false and the file exists this function will abort with failure.
+Otherwise, an existing file will be overwritten.
+
+![IPFS Download File](_static/img/04_download-file.png)
+
+:::info
+If *Success* is *True* that means that the response from the *IPFS* network was successful and writing file to disk to
+the specified path was also successful.
+:::
+
+If successful returns outputs as follows:
+* Request Handle <Step text="7"/> : Handle to a HTTP request, allows for cancellation of an ongoing request.
+* Bytes Received <Step text="8"/> : Number of bytes received while the request is still ongoing.
+* Bytes Total <Step text="9"/> : Total bytes expected to receive.
+* Response <Step text="10"/> : Struct, holds data such as headers, status code, and body of the response of the HTTP
+request.
