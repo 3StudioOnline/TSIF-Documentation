@@ -2,11 +2,31 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
-### 2.2.0 - [2024-xx-xx]
+### 3.0.0 - [2024-06-XX]
 - Added
+    - Support for Unreal Engine 5.4
     - IPFS HTTP Gateway: `saturn.ms`
+    - IPFS Pinning Service: `Pinata`
+    - Function to upload files to IPFS network using the web3.storage using W3UP Bridge
+    - Function to upload manifest to IPFS network using the web3.storage using W3UP Bridge
+    - Notification to disable "Use Io Store" setting
+    - DAG-JSON encoder/decoder
+    - `Auto Mount` and `Apply to Dependencies` to `Change Game Feature State` function
+    - `SHA2-256 to CIDv1` function
+- Changed
+    - Renamed `Manifest Manager` to `Chunker Manifest Manager`
+    - Renamed `Bytes Sent Total` to `Request Size` in Http Request
+    - Renamed `Bytes Received Total` to `Response Size` in Http Request
 - Fixed
     - Chunker logo
+    - Functions `Open` and `Close` for File Reader/Writer are not pure anymore
+    - Add missing TEXT macro
+    - Re-synchronize with the game thread before calling any delegates in async functions
+    - Minor bugfixes in IPFS and Http Request functions
+    - Add missing includes to prevent build breaker
+    - Filepath creation in File Writer
+- Removed
+    - Support for Unreal Engine 5.1
 
 ### 2.1.0 - [2023-12-24]
 - Added
