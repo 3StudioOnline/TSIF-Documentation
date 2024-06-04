@@ -5,26 +5,48 @@ title: Overview
 
 ## What is Chunker Manifest Manager
 
-The Chunker Manifest Manager is a tool designed to simplify the process of version management for both project and Game Features, PAK file uploading, as well as creation and uploading of the game manifest.
-This tool is directly integrated with the [IPFS (InterPlanetary File System)](https://docs.ipfs.tech/) and [IPNS (InterPlanetary Naming System)](https://docs.ipfs.tech/concepts/ipns/),
-and makes it be as easy as possible to utilize these decentralized storage systems.
-With its user-friendly interface, the Chunker Manifest Manager simplifies complex processes into just a few clicks, allowing developers to efficiently manage updates of their projects and Game Features.
-Each tab in the Chunker Manifest Manager is designed to guide you through the essential steps of managing your game project, from versioning and file uploading to manifest creation and deployment.
-This structured approach ensures a smooth and efficient workflow for project of any complexity and scope.
+The **Chunker Manifest Manager** is a tool designed to simplify the process of
+version management for both project and Game Features, PAK file uploading, as
+well as creation and uploading of the game manifest.
+This tool is directly integrated with
+[IPFS (InterPlanetary File System)](https://docs.ipfs.tech/)
+and [IPNS (InterPlanetary Naming System)](https://docs.ipfs.tech/concepts/ipns/)
+and enables you to utilize these decentralized storage systems with ease.
+
+With its user-friendly interface, the **Chunker Manifest Manager** simplifies
+complex processes into just a few clicks, allowing developers to efficiently
+manage updates of their projects and Game Features.
+Each tab in the **Chunker Manifest Manager** is designed to guide you through the
+essential steps of managing your game project, from versioning and file
+uploading to manifest creation and deployment.
+This structured approach ensures a smooth and efficient workflow for projects of
+any complexity and scope.
 
 ## Version Tab
 
-The Version tab is the starting point for preparing your game project for building and deployment.
-Here, you will set the version for your entire project as well as for individual Game Features.
-This ensures that any updates or changes made to Game Features are properly represented by their versions.
-By maintaining a clear versioning system, you can easily track changes and updates over time, providing a structured timeline of your project's development history.
+The Version tab is the starting point for preparing your game project for
+building and deployment. Here, you will set the version for your entire project
+as well as for individual *Game Features*. This ensures that any updates or
+changes made to *Game Features* are properly represented by their versions. By
+maintaining a clear versioning system, you can easily track changes and updates
+over time, providing a structured timeline of your project's development
+history.
 
 ## Upload Tab
 
-The Upload tab is where you will be uploading Game Features PAK files to the IPFS by selecting your files and initiating the uploading process with just a one click.
-After the upload is complete, the unique content identifiers (CIDs) for the uploaded files will be displayed and can be copied to be later used to reference these files on the IPFS network.
+The Upload tab is where you will be uploading *Game Feature* `.pak` files to IPFS by
+selecting your files and initiating the uploading process with a single click.
+After the upload is complete, the unique content identifiers (CIDs) for the
+uploaded files will be displayed and can be copied to be later used to reference
+these files on the IPFS network.
 
 ## Manifest Tab
 
-The Manifest tab is where you construct and upload the game's manifest to IPNS.
-Here you can select the game features to include in the manifest and generate a `GameManifest.json` file. After constructing the manifest, you can upload it to IPNS, where it will be assigned a unique CID and IPNS name.
+The Manifest tab is where you construct (and update) the game's manifest before
+uploading it to IPNS. You first select the *Game Features* that should be included
+in the manifest to construct. The action of constructing a manifest results in a
+newly generated `GameManifest.json` file. After constructing the manifest, you
+can upload it to IPNS to create or update the IPNS Record that is associated
+with your PEM Key.
+
+

@@ -4,77 +4,203 @@ title: Step-by-step Workflow Guide
 ---
 import {Step, Highlight} from '@site/src/lib/utils.mdx'
 
-## Prepare Game Features for building
+## Start
 
-* If you have IPFS plugin enabled in your project, the Chunker Manifest Manager icon will appear next to "play" button.
+After you [installed and enabled](/docs/getting-started/installation) the IPFS
+plugin, the **Chunker Manifest Manager** button will appear next to the *Play*
+button.
 
 ![Open Manifest Manager](_static/img/open-manifest-manager.png)
 
-* After clicking on it, you will see the Chunker Manifest Manager home page. Here you can read about each `tab` <Step text="1"/> or clink on one of the buttons
-to visit `documentation page` <Step text="2"/>, `YouTube tutorials` <Step text="3"/> or join our `Discord server` <Step text="4"/>.
-* To start using Chunker Manifest Manager go to next page by clicking `Version` <Step text="5"/>.
+Click on this button to open the **Chunker Manifest Manager** window.
+
+You will be greeted with the *Home* tab which gives you an overview about your
+options on each *tab* <Step text="1"/> as well as a convenient way to access the
+plugin's `Documentation` <Step text="2"/> and
+`YouTube Tutorials` <Step text="3"/>.
+
+If you have questions and need support, please join our
+`Discord Server` <Step text="4"/>.
+
+In order to start using **Chunker Manifest Manager**, click on the `Version`
+*tab* <Step text="5"/>.
 
 ![Home Page](_static/img/home-page.png)
 
+## Step 1: Prepare your Game Project
+
+This workflow makes use of Unreal Engine's built-in
+[Project Launcher](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-project-launcher-in-unreal-engine)
+and its profiles. The **Chunker Manifest Manager** will help you in creating
+and setting up those profiles correctly.
+
 ### Create Project Profile
 
-* First create project profile by clicking `Create` in the Project section.
+First, create a *Project Profile* by clicking `Create` in the *Project* section.
 
 ![Create Project Profile](_static/img/create-project-profile.png)
 
-* Most likely after that you will see the message "Missing cooked maps.". To fix that, go to `Tools` <Step text="1"/> menu, then click `Project Launcher` <Step text="2"/>.
-In opened menu you can find `Custom Launch Profiles` where will be listed yours project and plugin profiles. There you need to find your project Profile and click on a gear next to it to edit profile <Step text="3"/>.
-Scroll down in your project profile settings to find `Cooked maps` list and select at least one map <Step text="4"/>, that later will be cooked with the project.
-Then click `Back` <Step text="5"/> to save changes, close Project Launcher and go back to Chunker Manifest Manager. If you still see the message, click `Revalidate` <Step text="6"/> button and it should disappear.
+Usually, you will see the message `Missing cooked maps` after creating a new
+*Project Profile* which is expected.
+
+![Revalidate Maps](_static/img/missing-cooked-maps.png)
+
+### Resolve "Missing cooked maps"
+
+In order to resolve this configuration issue, go to the
+`Tools` <Step text="1"/> menu in the *Unreal Engine* editor window and select
+`Project Launcher` <Step text="2"/>.
 
 ![Open Project Launcher](_static/img/open-project-launcher.png)
+
+In the *Project Launcher* window, you will find a section labeled
+*Custom Launch Profiles*. All your existing *Project* and *Game Feature*
+profiles will be displayed here. For now, you should only see one profile which
+is the *Project Profile* named after your game project.
+
+Click on the *gear* <Step text="3"/> button next to your *Project Profile* to
+edit it.
+
 ![Edit Project Profile](_static/img/edit-project-profile.png)
+
+Next, scroll down within this *Project Profile* until you find a section labeled
+`Cooked maps`.
+
+Make sure there is at least one map of your project selected <Step text="4"/>
+that will be cooked with the project later.
+
+Then, click on the `Back` <Step text="5"/> button to save your changes and close
+the *Project Launcher* window.
+
 ![Select Maps](_static/img/select-maps.png)
+
+When switching back to the *Chunker Manifest Manager* window you may still see
+the message about missing cooked maps. Click the `Revalidate` <Step text="6"/>
+button to let **Chunker Manifest Manager** check again for any configuration
+issues.
+
 ![Revalidate Maps](_static/img/revalidate-cooked-maps.png)
 
-### "No Game Features available."
+The error message should have disappeared now after revalidating.
+
+### Resolve "No Game Features available"
+
+In case you do not have any *Game Features* in your project yet, you will see
+the message `No Game Features available` in the *Game Features* section.
+
+You can use the button <Step text="1"/> in the top right corner to refresh this list.
 
 ![No Game Features available.](_static/img/no-game-features.png)
 
-If after opening `Version` tab you see this message, make sure your Game Features are enabled.
+:::note
+If your project already uses **Game Features**, you can skip this section and
+continue with [Step 2](#step-2-prepare-your-game-features).
+:::
 
-Open `Edit` <Step text="1"/> menu, then click `Plugins` <Step text="2"/>. It will open the Plugins menu, where you need to select next `Game Features` <Step text="3"/>,
-check the box <Step text="4"/> next to your Game Feature(s) to enable them and restart the editor <Step text="5"/>.
+:::danger Important
+To make use of **Chunker Manifest Manager**, you need to have at least one
+*Game Feature* in your game project and at least one of them needs to be
+*enabled*.
+
+Follow the
+[official documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/game-features-and-modular-gameplay-in-unreal-engine)
+to create at least one *Game Feature*.
+:::
+
+If you still see this message after opening the *Version* tab, make sure your
+*Game Features* are enabled.
+
+Open `Edit` <Step text="1"/> menu, then click `Plugins` <Step text="2"/>.
 
 ![Open Plugins](_static/img/open-plugins.png)
+
+This will open the *Plugins* window. On the left hand side, select the
+`Game Features` <Step text="3"/> category and make sure the
+checkbox <Step text="4"/> next to your *Game Feature(s)* are enabled. You may
+need to restart the editor <Step text="5"/> afterwards.
+
 ![Enable Game Features](_static/img/enable-game-feature.png)
 
-After that if you go back to Chunker Manifest Manager, in `Version` tab now you should see the list of available Game Features.
+## Step 2: Prepare your Game Features
+
+In the `Version` tab of *Chunker Manifest Manager*, you should see a list of
+available *Game Features*.
 
 ![Game Features Are Available.](_static/img/game-freature-exists.png)
 
-### Create Game Features Profiles
+### Create Game Feature Profiles
 
-* Now when project profile is prepared, time to create profiles for the Game Features. For that simply select all your Game Features you want to use <Step text="1"/> and click `Create Profile` <Step text="2"/>.
-It will automatically create a profile for each of the selected game features.
+Now it's time to create profiles for your *Game Features*. Select one or more
+*Game Features* <Step text="1"/> and click on the
+`Create Profile` <Step text="2"/> button.
 
 ![Create Game Features Profiles](_static/img/create-game-features-profiles.png)
 
-## Create PAK files
+## Step 3: Create `.pak` files from *Game Features*
 
-* To build Game Features and generate PAK files go to `Tools` <Step text="1"/> menu, then click `Project Launcher` <Step text="2"/>.
-There you will see the list of all Project and Game Features Profiles. Before building Game Features, you need to build your project.
-Find your Project Profile and click `Launch` <Step text="3"/> button next to it to build your project. After this process finished, everything is ready for building Game Features.
-In the `Project Launcher` find Game Features that you want to build and click `Launch` <Step text="4"/> button next to their names.
-It will generate PAK file that you can fund by default under this path: `..\PROJECT_NAME\Plugins\GameFeatures\GAME_FEATURE_NAME\Saved\StagedBuilds\TARGET_PLATFORM\PROJECT_NAME\Plugins\GameFeatures\GAME_FEATURE_NAME\Content\Paks\TARGET_PLATFORM`
-It is recommended to copy/move PAK files of your Game Features into one directory, so later all of them can be selected at once for uploading.
+In order to create `.pak` files that can be uploaded later, each *Game Feature*
+needs to be built by using the corresponding *Project Launcher* profiles.
+
+In the *Unreal Engine* editor window, go to `Tools` <Step text="1"/> menu and
+select `Project Launcher` <Step text="2"/>.
 
 ![Open Project Launcher](_static/img/open-project-launcher.png)
+
+In the *Project Launcher* window you will see a list of all your *Project* and
+*Game Features* profiles that you just created.
+
+:::info
+Before you can build any of your *Game Features* you need to build your *Game
+Project* first.
+:::
+
+Find your *Project Profile* and click on its `Launch` <Step text="3"/> button.
+
+After this process has finished, continue with building your *Game Features*.
+To do so, find the *Game Features* that you want to build and click on their
+`Launch` <Step text="4"/> buttons, one after another.
+
 ![Launch Project Profile](_static/img/launch-project-profile.png)
 
-## Upload Game Features to IPFS
+At this point, you should find one created `.pak` file per *Game Feature*.
+
+Starting from the root directory of your Unreal project, the path to each `.pak`
+file can be found as follows:
+
+- `./`<Highlight>`PROJECT_NAME`</Highlight>`/Plugins/GameFeatures`
+    - `/`<Highlight>`GAME_FEATURE_NAME`</Highlight>`/Saved/StagedBuilds`
+        - `/`<Highlight>`TARGET_PLATFORM`</Highlight>
+            - `/`<Highlight>`PROJECT_NAME`</Highlight>`/Plugins/GameFeatures`
+                - `/`<Highlight>`GAME_FEATURE_NAME`</Highlight>`/Content/Paks`
+                    - `/`<Highlight>`TARGET_PLATFORM`</Highlight>
+
+:::tip
+Copy or move `.pak` files of your *Game Features* into one directory, so that
+all of them can easily be selected at once for uploading later.
+:::
+
+## Step 4: Upload Game Features to IPFS
 
 ### IPFS Settings
 
-* To be able to upload Game Features to IPFS first you need you choose to which pinning service yoy want to upload them and set your credentials. To do this, go to `IPFS Settings` <Step text="1"/> tab.
-There you can open a dropdown and select pinning service <Step text="2"/> you are using. After that below will appear all required token inputs <Step text="3"/>. Paste there your tokens and everything is ready for uploading Game Features.
+In order to upload *Game Features* to IPFS, you need to choose a
+*Pinning Service* and add your credentials for it in the
+`IPFS Settings` <Step text="1"/> tab.
+
+First, select the *Pinning Service* <Step text="2"/> you would like to use.
+Depending on the selected service, the inputs below for the required credentials
+may change.
+
+In this example, we chose *Web3.Storage* as our *Pinning Service* and have to
+provide a *DID*, *Authorization Secret*, and
+*Authorization Token* <Step text="3"/>.
 
 ![IPFS Settings](_static/img/ipfs-settings.png)
+
+:::tip
+Credentials are saved per *Pinning Service* so that switching between them is
+quick and easy.
+:::
 
 ### Upload
 
