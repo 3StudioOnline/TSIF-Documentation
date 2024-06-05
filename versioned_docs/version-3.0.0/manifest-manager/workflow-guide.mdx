@@ -14,7 +14,7 @@ button.
 
 Click on this button to open the **Chunker Manifest Manager** window.
 
-You will be greeted with the *Home* tab which gives you an overview about your
+You will be greeted with the `Home` tab which gives you an overview about your
 options on each *tab* <Step text="1"/> as well as a convenient way to access the
 plugin's `Documentation` <Step text="2"/> and
 `YouTube Tutorials` <Step text="3"/>.
@@ -23,7 +23,7 @@ If you have questions and need support, please join our
 `Discord Server` <Step text="4"/>.
 
 In order to start using **Chunker Manifest Manager**, click on the `Version`
-*tab* <Step text="5"/>.
+tab <Step text="5"/>.
 
 ![Home Page](_static/img/home-page.png)
 
@@ -54,7 +54,7 @@ In order to resolve this configuration issue, go to the
 ![Open Project Launcher](_static/img/open-project-launcher.png)
 
 In the *Project Launcher* window, you will find a section labeled
-*Custom Launch Profiles*. All your existing *Project* and *Game Feature*
+*Custom Launch Profiles*. All your existing project and *Game Feature*
 profiles will be displayed here. For now, you should only see one profile which
 is the *Project Profile* named after your game project.
 
@@ -64,7 +64,7 @@ edit it.
 ![Edit Project Profile](_static/img/edit-project-profile.png)
 
 Next, scroll down within this *Project Profile* until you find a section labeled
-`Cooked maps`.
+`Cooked Maps`.
 
 Make sure there is at least one map of your project selected <Step text="4"/>
 that will be cooked with the project later.
@@ -88,7 +88,8 @@ The error message should have disappeared now after revalidating.
 In case you do not have any *Game Features* in your project yet, you will see
 the message `No Game Features available` in the *Game Features* section.
 
-You can use the button <Step text="1"/> in the top right corner to refresh this list.
+You can use the button <Step text="1"/> in the top right corner to refresh this
+list.
 
 ![No Game Features available.](_static/img/no-game-features.png)
 
@@ -107,7 +108,7 @@ Follow the
 to create at least one *Game Feature*.
 :::
 
-If you still see this message after opening the *Version* tab, make sure your
+If you still see this message after opening the `Version` tab, make sure your
 *Game Features* are enabled.
 
 Open `Edit` <Step text="1"/> menu, then click `Plugins` <Step text="2"/>.
@@ -117,7 +118,7 @@ Open `Edit` <Step text="1"/> menu, then click `Plugins` <Step text="2"/>.
 This will open the *Plugins* window. On the left hand side, select the
 `Game Features` <Step text="3"/> category and make sure the
 checkbox <Step text="4"/> next to your *Game Feature(s)* are enabled. You may
-need to restart the editor <Step text="5"/> afterwards.
+need to restart the editor <Step text="5"/> afterward.
 
 ![Enable Game Features](_static/img/enable-game-feature.png)
 
@@ -146,12 +147,12 @@ select `Project Launcher` <Step text="2"/>.
 
 ![Open Project Launcher](_static/img/open-project-launcher.png)
 
-In the *Project Launcher* window you will see a list of all your *Project* and
+In the *Project Launcher* window you will see a list of all your project and
 *Game Features* profiles that you just created.
 
 :::info
-Before you can build any of your *Game Features* you need to build your *Game
-Project* first.
+Before you can build any of your *Game Features* you need to build your
+*Game Project* first.
 :::
 
 Find your *Project Profile* and click on its `Launch` <Step text="3"/> button.
@@ -204,42 +205,118 @@ quick and easy.
 
 ### Upload
 
-* Return to `Upload` <Step text="1"/> tab. Click `Select PAK Files...` <Step text="2"/> to open selection window. Go to directory where your PAK files are saved, select one or more of them and click `Open`.
-All selected files should appear now here. To start uploading, click button <Step text="3"/> `Upload PAK Files`. This process might take a few minutes, depending on the amount of files, their size and your internet speed.
-After they are uploaded you will see their CIDs <Step text="4"/> here and in `Output Log`. You can copy and save you CIDs from here but remember that after files are uploaded to your IPFS storage you can find them there and copy their CIDs from there.
+Now, open then `Upload` <Step text="1"/> tab. This is where you can select
+your `.pak` files for uploading to IPFS. Click on the
+`Select PAK Files...` <Step text="2"/> button to open the file dialog and select
+the `.pak` files you want to upload to IPFS.
+
+The list labeled as *Upload to IPFS* should now be populated with the `.pak`
+files you selected and be ready for upload. To start uploading, click the
+`Upload PAK Files` <Step text="3"/>  button. This process might take a while to
+finish, depending on the amount of files, their size, and your internet speed.
+
+After the upload has finished, you should see a *CID* <Step text="4"/> being
+displayed next to each `.pak` file. You can copy those *CIDs* directly from the
+`Upload` tab here. Also, the full list of file names and *CIDs* is printed to
+the `Output Log` in the *Unreal Engine* editor.
 
 ![Upload PAK Files](_static/img/upload-pak.png)
 
-## Construct and upload Manifest to IPNS
+:::note
+Uploaded `.pak` files and their corresponding *CIDs* can always be found later
+using the *Pinning Service's* dashboard on their website.
+:::
+
+## Step 5: Construct Game Manifest and Upload to IPNS
+
+In order to create or update an *IPNS Name*, a *PEM Key* is required. It is
+used for authorization so that only you as the owner of a specific *IPNS Name*
+can control its contents.
 
 ### IPNS Settings
 
-* Before working with manifest you need to set a PEM key. Go to `IPNS Settings` <Step text="1"/> tab.
-If you already have a PEM key saved as .pem file you can click `Browse...` <Step text="2"/> and select the file.
-If you don't have one at all, you can click `Generate PEM Key...` <Step text="3"/> and it will make one for you.
-Or you can import already existing PEM key from text by clicking `Import PEM Key from Text...` <Step text="4"/> and pasting it to opened field.
+Navigate to the `IPNS Settings` <Step text="1"/> tab.
+
+If you already have a *PEM Key*, simply click on the
+`Browse...` <Step text="2"/> button and select your file to use it.
+
+In the case that you do not have a *PEM Key* yet, click on the
+`Generate PEM Key...` <Step text="3"/> button to generate a new one.
+
+Alternatively, you can import an existing *PEM Key* from text by clicking the
+`Import PEM Key from Text...` <Step text="4"/> button. It will open a dialog
+where you can paste the text to import your key.
+
 
 ![IPNS Settings](_static/img/ipns-settings.png)
 
-### Construct and upload
+Your *PEM Key* should now be set up and ready for use.
 
-* After PEM key is set open `Manifest` <Step text="1"/> tab. There you will see list of all Game Features in this Project.
-Select <Step text="2"/> the ones that you would like to include in the manifest and click <Step text="3"/> `Construct Manifest`. This will create `GameManifest.json` under `IPFS Developer Directory` which can be changed in the Project Settings (`IPFS-Developer` by default).
-After manifest is constructed click <Step text="4"/> `Upload Manifest` to upload it to IPNS. When it is done, manifest's CID and IPNS name will appear as notification on a screen and in the output log.
+:::danger Important
+Make sure to store your *PEM Key* in a safe location. If you lose it, you will
+not be able to update the corresponding *IPNS Name* again.
+:::
+
+### Construct and Upload
+
+Navigate to the `Manifest` <Step text="1"/> tab. There you will see a list of
+all your *Game Features* in the project.
+
+Select the *Game Features* <Step text="2"/> that you would like to include in
+the *Game Manifest* and click on the  <Step text="3"/> `Construct Manifest`
+button.
+
+This will create a file called `GameManifest.json` at
+`./`<Highlight>`PROJECT_NAME`</Highlight>`/Saved/IPFS-Developer/`.
+
+:::tip
+The direcotry name can be changed in the *Project Settings* under
+`3Studio | IPFS (User Settings)`, then find the setting under
+`Developer | IPFS Developer Directory`.
+:::
+
+After the *Game Manifest* is constructed, click on the <Step text="4"/>
+`Upload Manifest` button to upload it to IPNS.
 
 ![Manifest](_static/img/manifest.png)
+
+This will first upload the *Game Manifest* file to IPFS. After that, your
+*IPNS Name* will be created/updated to now point to the CID of the
+*Game Manifest* that was uploaded just a moment before.
+
+
+The *Game Manifest*'s *CID* and *IPNS Name* will both appear as notifications on
+the screen and in the *Unreal Engine* editor's `Output Log`.
+
 ![Manifest Notification](_static/img/manifest-notification.png)
+
 ![Manifest Log](_static/img/manifest-log.png)
 
-## Project update pipeline
+## Step 6: Project update pipeline
 
-* Although this is possible to use Manifest Manager's functionality in many different ways, this tool is build with the idea of specific game update pipeline.
-By following this pipeline you can ensure the most effectiveness of this tool.
+Although it is possible to use *Manifest Manager's* functionality in many
+different ways, this tool was built with a specific game update pipeline in
+mind.
+
+By following this pipeline you ensure to benefit the most when using this tool.
 
 ### Versioning
 
-* After changes were made in your Project and/or Game Features, and it's ready for an update, first step is to update Project version.
-Even if changes were made only in one of the Game Features, it should still be represented in Project Version.
-Then in case if changes were made in one or more Game Features, set their version to new Project version. Do not apply new version to Game Features that didn't get updated.
-It's crucial to update the project version even if only a single game feature has been modified, as this ensures consistency and clarity in the development process.
-By using this method you ensure a clear overview of timeline when each of the Game Features was updated.
+After you made new changes to your project and/or *Game Features*, you
+will want to release an update on IPFS. Your first step should be to update the
+*Project Version*.
+
+Even if changes were only made in a single *Game Feature*, it should still be
+represented in your *Project Version*. In case changes were made in one
+or more *Game Features*, set their version to the new *Project Version*.
+
+Do **not** apply the new version to *Game Features* that were not updated.
+
+It is crucial to update the *Project Version* even if only a single game feature
+has been modified as this ensures consistency and clarity in the development
+process.
+
+By using this method you ensure a clear overview of timeline when each of the
+*Game Features* were updated.
+
+
