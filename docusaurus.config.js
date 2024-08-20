@@ -7,6 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const url3StudioWebsite = "https://3studio.online";
 const urlUnrealMarketplaceProduct_TSIF = "https://www.unrealengine.com/marketplace/en-US/product/b8a5ef2c915c4359b7e66d08a85d4c74";
 const urlUnrealMarketplaceProduct_TSBC = "https://www.unrealengine.com/marketplace/en-US/product/fc42c8121e0d445f8887ed6962af796e";
+const urlUnrealMarketplaceProduct_AGR = "https://www.unrealengine.com/marketplace/en-US/product/3648e75cbc444e3e9f1a370074515c9d";
 const urlDiscordInviteLink = "http://discord.3studio.online";
 const urlGitHubRepository = "https://github.com/3StudioOnline/TSIF-Documentation";
 const urlGitHubIssueTracker = `${urlGitHubRepository}/issues`;
@@ -187,6 +188,10 @@ const config = {
                             {
                                 label: "3S Game Studio Blockchain Plugin",
                                 href: urlUnrealMarketplaceProduct_TSBC,
+                            },
+                            {
+                                label: "3S Game Studio AGR Plugin",
+                                href: urlUnrealMarketplaceProduct_AGR,
                             },
                         ],
                     },
