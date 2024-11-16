@@ -1,0 +1,35 @@
+---
+sidebar_position: 1
+title: Publish Name
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Publish Name
+
+`IPNS Publish Name` publishes (or republishes) an IPNS name through a pinning service. This function requires inputs as
+follows:
+* `Ipfs Address` <Step text="1"/> : Struct, holds the CID and path of the file on *IPFS* network.
+* `Private Key PEM` <Step text="2"/> : Byte array, the private key used to sign the record in `PEM` encoding.
+* `Ipns Service` <Step text="3"/> : Enum, the pinning service used to publish the record.
+
+There's also additional inputs that can be left empty, but offer additional control over the name:
+* `Password` <Step text="4"/> : UTF-8 String, pass-phrase used to decrypt the private key
+(should stay empty if the key is not encrypted).
+* `Lifetime` <Step text="5"/> : Timespan, the length of time for which the record will be valid without additional
+republishing. By default, this value is set to 1 year (365 days).
+* `Ttl` <Step text="6"/> : uint64, this is a DNS-related term better explained
+[here](https://en.wikipedia.org/wiki/Time_to_live). The default value is 300 (5 minutes).
+* `Request Name` <Step text="7"/> : Name, a unique identifier for the plugin's HTTP subsystem. It allows to fetch the
+request by name. This is purely optional and only changes how the HTTP request will be managed internally by the plugin.
+
+![IPNS Publish Name](_static/img/ipns_publish_name.png)
+
+The returned *Response* is a struct that holds data such as headers, status code, and body of the response of the HTTP
+request.
+
+:::info
+If *Success* is *True* that only means that the response from the *IPFS* network was successful only.
+:::
+
+If successful, returns the request structure <Step text="8"/> containing the record field values and the IPNS name.

@@ -1,0 +1,26 @@
+---
+sidebar_position: 2
+title: Record
+---
+
+:::note
+This page contains only basic information needed to understand the plugin. Full information on protocols and the
+process of record creation, signing and serialization can be viewed on [IPFS specs](https://specs.ipfs.tech/ipns/ipns-record) webpage.
+:::
+
+## Description
+An **IPNS record** is a data structure, that drives the mechanics of IPNS. The CID pointed to by the name, the validity
+of the name and the signature used for verification of the record's authenticity are all contained in the record.
+Usually, records do not need to be accessed by the developer as the remote handles them internally and only serves the
+content pointed to by the record.
+
+## Fields
+IPNS records contain various data fields that provide information both about the name and the data being linked to.
+The most important fields are:
+* **Value** : This is the actual value pointed to by the name. Usually an IPFS CID or another IPNS name.
+* **Validity** : How long the IPNS name is valid. This can be updated when the record is republished.
+* **Sequence** : The iteration this record is on. Starts at 1 with the first publishing and increases by 1 with every republish.
+* **Signature** : The cryptographic signature of the data contained in the record. Provides proof of ownership, because the
+IPNS name itself is created from the public part key used in signing.
+
+More about the record, fields and protocols associated with it can be found [here](https://specs.ipfs.tech/ipns/ipns-record).
